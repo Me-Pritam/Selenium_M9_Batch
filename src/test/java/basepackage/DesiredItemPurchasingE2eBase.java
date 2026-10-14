@@ -1,5 +1,6 @@
 package basepackage;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import pompackage.*;
@@ -24,6 +25,8 @@ public class DesiredItemPurchasingE2eBase
     public BrowserUtility browserUtils;
     public ActionsUtility actions;
 
+    public WebDriver driver;
+
     @BeforeTest
     public void loadConfiguration()
     {
@@ -37,6 +40,8 @@ public class DesiredItemPurchasingE2eBase
             desiredProduct = PropertyFileUtility.getData("desiredProduct");
 
             browserUtils = new BrowserUtility();
+
+
 
         }
         catch (Exception e)
@@ -54,5 +59,20 @@ public class DesiredItemPurchasingE2eBase
         browserUtils.waitForPageLoad(10);
         browserUtils.openUrl(url);
         browserUtils.waitForElement(10);
+        driver = browserUtils.getDriver();
+
     }
+
+    @BeforeClass(dependsOnMethods = "doConfiguration")
+    public void loadPages()
+    {
+        login = new LogInPagePOM(driver);
+        navBar = new NavBarPOM(driver);
+        inventory = new InventoryPagePOM(driver);
+        product = new ProductPagePOM(driver);
+        cart = new CartPagePOM(driver);
+
+        login.performLogIn(username,password);
+    }
+
 }

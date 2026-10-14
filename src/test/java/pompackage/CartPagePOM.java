@@ -59,4 +59,9 @@ public class CartPagePOM
     {
         continueShoppingButton.click();
     }
+
+    public void clickOnCheckOutButton()
+    {
+        checkOutButton.click();
+    }
 }

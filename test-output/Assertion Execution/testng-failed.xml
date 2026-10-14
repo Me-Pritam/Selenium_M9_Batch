@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Assertion Execution]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Executing Assertion(failed)">
+    <classes>
+      <class name="testpackage.PurchasingDesiredItem">
+        <methods>
+          <include name="doConfiguration"/>
+          <include name="goToCartPage"/>
+          <include name="checkOutProduct"/>
+          <include name="selectDesiredProduct"/>
+          <include name="loadPages"/>
+          <include name="addItemToCart"/>
+          <include name="loadConfiguration"/>
+        </methods>
+      </class> <!-- testpackage.PurchasingDesiredItem -->
+    </classes>
+  </test> <!-- Executing Assertion(failed) -->
+</suite> <!-- Failed suite [Assertion Execution] -->

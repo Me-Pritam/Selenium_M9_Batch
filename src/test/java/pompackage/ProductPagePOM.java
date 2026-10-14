@@ -15,6 +15,10 @@ public class ProductPagePOM
         PageFactory.initElements(driver,this);
     }
 
+    public WebElement getAddToCartButton() {
+        return addToCartButton;
+    }
+
     public void clickOnAddToCart()
     {
         addToCartButton.click();
