@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Batch Executor">
+        <classes>
+            <class name="testpackage.PurchasingDesiredItem">
+                <methods>
+                    <include name="selectDesiredProduct"/>
+                    <include name="addItemToCart"/>
+                    <include name="goToCartPage"/>
+                    <include name="checkOutProduct"/>
+                </methods>
+            </class>
+            <class name="testpackage.PurchasingItemSoftAssertion">
+                <methods>
+                    <include name="purchaseDesiredItem"/>
+                </methods>
+            </class>
+            <class name="testpackage.UnderStandingDataProvider">
+                <methods>
+                    <include name="testMethod"/>
+                </methods>
+            </class>
+            <class name="testpackage.UnderstandingDependsOnMethods">
+                <methods>
+                    <include name="logIn"/>
+                    <include name="searchProduct"/>
+                    <include name="goToProductPage"/>
+                    <include name="AddProductToCart"/>
+                    <include name="goToCart"/>
+                    <include name="changeQuantity"/>
+                    <include name="purchaseProduct"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
